@@ -1,3 +1,3 @@
 # dotfiles
 
-Dotfiles for my machines, managed by [Chezmoi](https://www.chezmoi.io)
+Dotfiles for my machines, managed by [chezmoi](https://www.chezmoi.io)
