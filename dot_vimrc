@@ -1,0 +1,23 @@
+" Don't try to emulate vi.
+set nocompatible
+set backspace=indent,eol,start
+
+" Don't create temporary files.
+set nobackup
+
+" Allow file-specific indent files.
+filetype indent on
+
+" Use spaces, not tabs.
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Use syntax highlighting.
+syntax on
+
+" Highlight the last search result(s).
+set hlsearch
+
+" Don't hide the entire line past the viewable window.
+set display=lastline
