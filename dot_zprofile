@@ -1,0 +1,6 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export PATH="${HOME}/Qt/5.15.2/clang_64/bin:${PATH}"
+
+alias ll="ls -lahG"
+alias bu="brew update --verbose && brew upgrade --verbose && brew upgrade --verbose --cask --greedy && brew cleanup"
