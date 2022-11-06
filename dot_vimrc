@@ -1,23 +1,56 @@
 " Don't try to emulate vi.
 set nocompatible
-set backspace=indent,eol,start
 
 " Don't create temporary files.
 set nobackup
 
-" Allow file-specific indent files.
+" Watch for file changes.
+set autoread
+
+" Use syntax highlighting.
+syntax on
+
+" Allow file-specific behavior.
+filetype on
 filetype indent on
+filetype plugin on
 
 " Use spaces, not tabs.
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set smarttab
 
-" Use syntax highlighting.
-syntax on
+" Use better indenting.
+set autoindent
+set smartindent
+set shiftround
+
+" Allow backspacing over everything.
+set backspace=indent,eol,start
+
+" Indicate the desired column width.
+let &colorcolumn=join(range(121,999),",")
+highlight colorcolumn ctermbg=234 guibg=#1c1c1c
+
+" Show line numbers.
+set number
 
 " Highlight the last search result(s).
 set hlsearch
+set showmatch
+
+" Interact with the OS clipboard.
+set clipboard=unnamed
+
+" Don't beep or flash the screen on errors.
+set noerrorbells
+set visualbell
+set t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 " Don't hide the entire line past the viewable window.
-set display=lastline
+set display+=lastline
+
+" Display the editor context in the window title.
+set title
