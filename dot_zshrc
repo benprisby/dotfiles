@@ -1,3 +1,10 @@
+# Behave more like Bash.
 setopt noautomenu
 setopt nonomatch
 setopt rm_star_silent
+
+# Assorted aliases.
+alias ax="arch -x86_64"
+alias bu="brew update --verbose && brew upgrade --verbose && brew upgrade --verbose --cask --greedy && brew cleanup"
+alias ll="ls -lahG"
+alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
