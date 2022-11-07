@@ -4,6 +4,13 @@
 
 set -e
 
+# Acquire sudo credentials for this session.
+sudo -v
+
+echo "Applying system settings"
+sudo systemsetup -setremotelogin on &> /dev/null  # SSH
+sudo systemsetup -setrestartfreeze on &> /dev/null
+
 echo "Applying desktop settings"
 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/System/Library/Desktop Pictures/Solid Colors/Stone.png"'
 
