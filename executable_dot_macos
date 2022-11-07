@@ -1,0 +1,77 @@
+#!/bin/bash
+
+# macOS configuration (--no-kill to not kill any apps or services)
+
+set -e
+
+echo "Applying desktop settings"
+osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/System/Library/Desktop Pictures/Solid Colors/Stone.png"'
+
+echo "Applying input settings"
+defaults write -g ApplePressAndHoldEnabled -bool false  # Use key repeat
+defaults write -g InitialKeyRepeat -int 18  # Start repeating quicker
+defaults write -g KeyRepeat -int 3  # Once active, repeat the key much faster (but not as HAM as 1)
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false  # No smart quotes
+defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false # No period when hitting the space bar twice
+
+echo "Applying Finder settings"
+defaults write com.apple.finder NewWindowTarget -string "PfDo"  # Default to Documents
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+defaults write com.apple.finder AppleShowAllFiles -bool true  # Hidden files
+defaults write -g AppleShowAllExtensions -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder QLEnableTextSelection -bool true  # Quick Look
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true  # Display full path
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"  # Current folder
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+defaults write com.apple.finder FXPreferredViewStyle -string "clmv"  # Column view
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+finder_plist=~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ${finder_plist}  # Snap to grid
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ${finder_plist}
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ${finder_plist}
+chflags nohidden ~/Library
+
+echo "Applying Dock settings"
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-delay -float 0  # Show immediately
+defaults write com.apple.dock tilesize -int 60
+defaults write com.apple.dock magnification -bool true
+defaults write com.apple.dock largesize -int 100
+defaults write com.apple.dock showhidden -bool true
+defaults write com.apple.dock expose-animation-duration -float 0.15  # Speed up Mission Control animations
+
+echo "Applying Safari settings"
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+defaults write -g WebKitDeveloperExtras -bool true  # Context menu item for showing the Web Inspector
+
+echo "Applying Mail settings"
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false  # Copy as foo@example.com (without name)
+
+echo "Applying Activity Monitor settings"
+defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
+defaults write com.apple.ActivityMonitor ShowCategory -int 0  # All processes
+
+echo "Applying Messages settings"
+defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
+defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
+
+if [ "$1" != "--no-kill" ]; then
+    for app in cfprefsd Dock Finder Mail SystemUIServer Terminal; do
+        if killall -q ${app} &> /dev/null; then
+            echo "Killed ${app}"
+        else
+            echo "${app} not running"
+        fi
+    done
+else
+    echo "Not killing apps because of command line flag"
+fi
+
+echo "Log out and log back in to make all settings take effect"
