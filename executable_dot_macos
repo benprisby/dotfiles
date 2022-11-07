@@ -17,7 +17,7 @@ osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/S
 echo "Applying input settings"
 defaults write -g ApplePressAndHoldEnabled -bool false  # Use key repeat
 defaults write -g InitialKeyRepeat -int 18  # Start repeating quicker
-defaults write -g KeyRepeat -int 3  # Once active, repeat the key much faster (but not as HAM as 1)
+defaults write -g KeyRepeat -int 2  # Once active, repeat the key much faster (but not as HAM as 1)
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false  # No smart quotes
 defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false # No period when hitting the space bar twice
