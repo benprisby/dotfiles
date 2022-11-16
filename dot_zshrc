@@ -1,4 +1,5 @@
 # Behave more like Bash.
+setopt globdots
 setopt noautomenu
 setopt nonomatch
 setopt rm_star_silent
