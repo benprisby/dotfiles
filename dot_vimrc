@@ -40,9 +40,6 @@ set number
 set hlsearch
 set showmatch
 
-" Interact with the OS clipboard.
-set clipboard=unnamed
-
 " Don't beep or flash the screen on errors.
 set noerrorbells
 set visualbell
