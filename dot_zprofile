@@ -1,9 +1,6 @@
 # Set up Homebrew environment.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Relax the Homebrew autoupdate interval to weekly.
-export HOMEBREW_AUTO_UPDATE_SECS=604800
-
 # Make Qt available.
 export PATH="${HOME}/Qt/6.7.1/macos/bin:${PATH}"
 
