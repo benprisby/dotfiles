@@ -9,3 +9,8 @@ alias ax="arch -x86_64"
 alias bu="brew update --verbose && brew upgrade --verbose && brew upgrade --verbose --cask && brew cleanup"
 alias ll="ls -lahG"
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
+
+# Automatically use chruby.
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.1.3
