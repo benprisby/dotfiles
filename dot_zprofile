@@ -6,3 +6,6 @@ export HOMEBREW_AUTO_UPDATE_SECS=604800
 
 # Make Qt available.
 export PATH="${HOME}/Qt/6.7.1/macos/bin:${PATH}"
+
+# Make local user installations available.
+export PATH="${HOME}/.local/bin:${PATH}"
