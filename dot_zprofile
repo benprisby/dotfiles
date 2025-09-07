@@ -1,8 +1,15 @@
-# Set up Homebrew environment.
+# Homebrew setup
 eval "$(/opt/homebrew/bin/brew shellenv)"
+export HOMEBREW_AUTO_UPDATE_SECS=604800
 
-# Make Qt available.
-export PATH="${HOME}/Qt/6.7.1/macos/bin:${PATH}"
-
-# Make local user installations available.
+# PATH configuration
+export PATH=${HOME}/Qt/6.8.3/clang_64/bin:${PATH}
 export PATH="${HOME}/.local/bin:${PATH}"
+export PATH="/usr/local/bin:${PATH}"
+
+# Default editor
+export EDITOR=vim
+
+# Locale setup
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
