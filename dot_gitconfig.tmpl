@@ -1,0 +1,21 @@
+[user]
+    name = Ben Prisby
+{{- if eq .chezmoi.hostname "Ben-Prisby-CF4193Q04G" }}
+    email = benprisby@desktopmetal.com
+{{- else }}
+    email = ben@benprisby.com
+{{- end }}
+
+[core]
+    editor = vim
+
+[pull]
+    rebase = true
+{{- if eq .chezmoi.os "darwin" }}
+
+[diff]
+    tool = fork
+
+[merge]
+    tool = fork
+{{- end }}

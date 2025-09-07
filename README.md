@@ -9,6 +9,7 @@ Dotfiles for my machines, managed by [chezmoi](https://www.chezmoi.io)
 | `.zshrc`, `.zprofile`      | macOS    | Enhanced zsh with better history, aliases, and Homebrew integration |
 | `.bashrc`, `.bash_profile` | Linux    | Bash equivalents with completion and aliases |
 | `.vimrc`                   | All      | Minimal setup with cursor position memory and quality-of-life improvements |
+| `.gitconfig`               | All      | Git configuration with per-machine differences |
 | `.macos`                   | macOS    | Automated system preferences for keyboard, Finder, and Dock |
 
 ## Setup
