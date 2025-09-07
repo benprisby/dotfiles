@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# macOS configuration (--no-kill to not kill any apps or services)
+# macOS configuration
 
 set -e
 
@@ -69,17 +69,5 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0  # All processes
 echo "Applying Messages settings"
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add automaticQuoteSubstitutionEnabled -bool false
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add continuousSpellCheckingEnabled -bool false
-
-if [ "$1" != "--no-kill" ]; then
-    for app in cfprefsd Dock Finder Mail SystemUIServer Terminal; do
-        if killall -q ${app} &> /dev/null; then
-            echo "Killed ${app}"
-        else
-            echo "${app} not running"
-        fi
-    done
-else
-    echo "Not killing apps because of command line flag"
-fi
 
 echo "Log out and log back in to make all settings take effect"
