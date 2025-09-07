@@ -14,10 +14,28 @@ Dotfiles for my machines, managed by [chezmoi](https://www.chezmoi.io)
 
 ## Setup
 
+chezmoi supports [many installation options](https://www.chezmoi.io/install/).
+
+### macOS
+
 ```shell
 brew install chezmoi
 chezmoi init https://github.com/benprisby/dotfiles.git
 chezmoi apply  # Automatically runs macOS configuration script
+```
+
+### Linux
+
+```shell
+sh -c "$(curl -fsLS get.chezmoi.io/lb)"  # Installs binary to ~/.local/bin
+chezmoi init https://github.com/benprisby/dotfiles.git
+chezmoi apply
+```
+
+or as a one-liner:
+
+```shell
+sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply benprisby
 ```
 
 ## Notes
