@@ -1,16 +1,40 @@
-# Behave more like Bash.
+# Bash-like behavior
 setopt globdots
 setopt noautomenu
 setopt nonomatch
 setopt rm_star_silent
 
-# Assorted aliases.
-alias ax="arch -x86_64"
-alias bu="brew update --verbose && brew upgrade --verbose && brew upgrade --verbose --cask && brew cleanup"
-alias ll="ls -lahG"
-alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
+# Directory navigation
+setopt auto_cd
+setopt auto_pushd
+setopt pushd_ignore_dups
 
-# Automatically use chruby.
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.1.3
+# History configuration
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_dups
+setopt hist_ignore_space
+
+# Enhanced tab completion
+autoload -Uz compinit && compinit
+
+# File listing
+alias ll="ls -lahG"
+alias la="ls -la"
+
+# System utilities
+alias grep="grep --color=auto"
+alias ..="cd .."
+alias ...="cd ../.."
+alias df="df -h"
+alias du="du -h"
+alias mkdir="mkdir -p"
+
+# Architecture emulation shortcut
+alias ax="arch -x86_64"
+
+# Combined Homebrew update
+alias bu="brew update --verbose && brew upgrade --verbose && brew upgrade --verbose --cask && brew cleanup"
+
+# Utilities
+alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
