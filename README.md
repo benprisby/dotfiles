@@ -10,15 +10,14 @@ Dotfiles for my machines, managed by [chezmoi](https://www.chezmoi.io)
 | `.bashrc`, `.bash_profile` | Linux    | Bash equivalents with completion and aliases |
 | `.vimrc`                   | All      | Minimal setup with cursor position memory and quality-of-life improvements |
 | `.gitconfig`               | All      | Git configuration with per-machine differences |
-| `.macos`                   | macOS    | Automated system preferences for keyboard, Finder, and Dock |
+| `configure-macos.sh`       | macOS    | Automated system preferences for keyboard, Finder, and Dock |
 
 ## Setup
 
 ```shell
 brew install chezmoi
 chezmoi init https://github.com/benprisby/dotfiles.git
-chezmoi apply
-~/.macos
+chezmoi apply  # Automatically runs macOS configuration script
 ```
 
 ## Notes

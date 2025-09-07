@@ -1,3 +1,4 @@
+{{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
 # macOS configuration
@@ -49,3 +50,4 @@ defaults write com.apple.dock showhidden -bool true
 defaults write com.apple.dock showrecents -bool false
 
 echo "Log out and log back in to make all settings take effect"
+{{- end -}}
