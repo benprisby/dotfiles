@@ -1,0 +1,40 @@
+Host *
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_ed25519
+
+Host udm
+    HostName 10.20.0.1
+    User root
+
+Host nas
+    HostName 10.20.0.10
+    User lbp
+
+Host big-slice
+    HostName 10.20.0.15
+    User lbp
+
+Host small-slice-01
+    HostName 10.20.0.11
+    User lbp
+
+Host small-slice-02
+    HostName 10.20.0.12
+    User lbp
+
+Host small-slice-03
+    HostName 10.20.0.13
+    User lbp
+
+Host small-slice-04
+    HostName 10.20.0.14
+    User lbp
+
+Host octopi
+    HostName 10.20.10.10
+    User pi
+
+Host vc-dashboard
+    HostName 10.20.10.11
+    User lbp
