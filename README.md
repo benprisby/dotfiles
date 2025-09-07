@@ -4,9 +4,12 @@ Dotfiles for my machines, managed by [chezmoi](https://www.chezmoi.io)
 
 ## Contents
 
-- **Shell configuration** (`.zshrc`, `.zprofile`): Enhanced zsh with better history, aliases, and Homebrew integration
-- **Vim configuration** (`.vimrc`): Minimal setup with cursor position memory and quality-of-life improvements
-- **macOS setup script** (`.macos`): Automated system preferences for keyboard, Finder, and Dock
+| File(s)                    | Platform | Description |
+| -------------------------- | -------- | ----------- |
+| `.zshrc`, `.zprofile`      | macOS    | Enhanced zsh with better history, aliases, and Homebrew integration |
+| `.bashrc`, `.bash_profile` | Linux    | Bash equivalents with completion and aliases |
+| `.vimrc`                   | All      | Minimal setup with cursor position memory and quality-of-life improvements |
+| `.macos`                   | macOS    | Automated system preferences for keyboard, Finder, and Dock |
 
 ## Setup
 
