@@ -37,10 +37,6 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"  # Current f
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv"  # Column view
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-finder_plist=~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ${finder_plist}  # Snap to grid
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ${finder_plist}
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ${finder_plist}
 chflags nohidden ~/Library
 
 echo "Applying Dock settings"
@@ -51,23 +47,5 @@ defaults write com.apple.dock magnification -bool true
 defaults write com.apple.dock largesize -int 100
 defaults write com.apple.dock showhidden -bool true
 defaults write com.apple.dock showrecents -bool false
-defaults write com.apple.dock expose-animation-duration -float 0.15  # Speed up Mission Control animations
-
-echo "Applying Safari settings"
-defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
-defaults write -g WebKitDeveloperExtras -bool true  # Context menu item for showing the Web Inspector
-
-echo "Applying Mail settings"
-defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false  # Copy as foo@example.com (without name)
-
-echo "Applying Activity Monitor settings"
-defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
-defaults write com.apple.ActivityMonitor ShowCategory -int 0  # All processes
-
-echo "Applying Messages settings"
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add automaticQuoteSubstitutionEnabled -bool false
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add continuousSpellCheckingEnabled -bool false
 
 echo "Log out and log back in to make all settings take effect"
