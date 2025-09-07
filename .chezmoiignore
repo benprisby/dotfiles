@@ -1,12 +1,12 @@
 README.md
 
 {{ if eq .chezmoi.os "darwin" }}
-dot_bashrc
-dot_bash_profile
+.bashrc
+.bash_profile
 {{ end }}
 
 {{ if eq .chezmoi.os "linux" }}
-dot_zshrc
-dot_zprofile
-executable_dot_macos
+.zshrc
+.zprofile
+.macos
 {{ end }}
