@@ -1,53 +1,46 @@
-" Don't try to emulate vi.
+" Basic behavior
 set nocompatible
-
-" Don't create temporary files.
 set nobackup
-
-" Watch for file changes.
 set autoread
 
-" Use syntax highlighting.
+" Remember cursor position
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+" Syntax and file types
 syntax on
+filetype plugin indent on
 
-" Allow file-specific behavior.
-filetype on
-filetype indent on
-filetype plugin on
-
-" Use spaces, not tabs.
+" Indentation
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set smarttab
-
-" Use better indenting.
 set autoindent
-set smartindent
-set shiftround
 
-" Allow backspacing over everything.
+" Editing
 set backspace=indent,eol,start
 
-" Indicate the desired column width.
-let &colorcolumn=join(range(121,999),",")
+" Search improvements
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" Better file handling
+set hidden
+set confirm
+
+" Display
+set number
+set showcmd
+set ruler
+set wildmenu
+set colorcolumn=120
 highlight colorcolumn ctermbg=234 guibg=#1c1c1c
 
-" Show line numbers.
-set number
+" Performance
+set lazyredraw
 
-" Highlight the last search result(s).
-set hlsearch
-set showmatch
-
-" Don't beep or flash the screen on errors.
+" Disable bells
 set noerrorbells
 set visualbell
 set t_vb=
-autocmd GUIEnter * set visualbell t_vb=
-
-" Don't hide the entire line past the viewable window.
-set display+=lastline
-
-" Display the editor context in the window title.
-set title
