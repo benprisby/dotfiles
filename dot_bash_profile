@@ -1,0 +1,14 @@
+# PATH configuration
+export PATH="${HOME}/.local/bin:${PATH}"
+
+# Default editor
+export EDITOR=vim
+
+# Locale setup
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# Source .bashrc if it exists and we're interactive.
+if [ -f ~/.bashrc ] && [[ $- == *i* ]]; then
+    . ~/.bashrc
+fi

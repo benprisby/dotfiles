@@ -1,0 +1,26 @@
+# History configuration
+shopt -s histappend
+export HISTCONTROL=ignoredups
+export HISTIGNORE=" *"
+
+# Directory navigation
+shopt -s autocd 2>/dev/null || true  # Bash 4.0+
+
+# Enhanced completion (if available)
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+elif [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+fi
+
+# File listing
+alias ll="ls -lah"
+alias la="ls -la"
+
+# System utilities
+alias grep="grep --color=auto"
+alias ..="cd .."
+alias ...="cd ../.."
+alias df="df -h"
+alias du="du -h"
+alias mkdir="mkdir -p"
