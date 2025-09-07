@@ -9,4 +9,9 @@ README.md
 .zshrc
 .zprofile
 .macos
+.ssh/config
+{{ end }}
+
+{{ if eq .chezmoi.hostname .work.hostname }}
+.ssh/config
 {{ end }}
