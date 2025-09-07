@@ -22,5 +22,6 @@ chezmoi apply
 
 ## Notes
 
+- Different configurations applied automatically based on machine (OS and/or hostname)
 - The Qt path in `.zprofile` may need adjustment
 - macOS script tested on Sequoia 15.6.1
