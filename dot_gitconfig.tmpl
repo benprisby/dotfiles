@@ -1,9 +1,9 @@
 [user]
     name = Ben Prisby
-{{- if eq .chezmoi.hostname "Ben-Prisby-CF4193Q04G" }}
-    email = benprisby@desktopmetal.com
+{{- if eq .chezmoi.hostname .work.hostname }}
+    email = {{ .work.email }}
 {{- else }}
-    email = ben@benprisby.com
+    email = {{ .personal.email }}
 {{- end }}
 
 [core]
