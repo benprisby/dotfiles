@@ -15,6 +15,10 @@ setopt sharehistory
 setopt hist_ignore_dups
 setopt hist_ignore_space
 
+# History search keybindings
+bindkey "^R" history-incremental-search-backward
+bindkey "^S" history-incremental-search-forward
+
 # Enhanced tab completion
 autoload -Uz compinit && compinit
 
