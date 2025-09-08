@@ -1,7 +1,6 @@
 # History configuration
+HISTCONTROL=ignoreboth
 shopt -s histappend
-export HISTCONTROL=ignoredups
-export HISTIGNORE=" *"
 
 # Directory navigation
 shopt -s autocd 2>/dev/null || true  # Bash 4.0+
