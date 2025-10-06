@@ -19,6 +19,16 @@ setopt hist_ignore_space
 bindkey "^R" history-incremental-search-backward
 bindkey "^S" history-incremental-search-forward
 
+# Basic line editing
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey '^K' kill-line
+bindkey '^U' backward-kill-line
+
+# Word movement (Option + arrow on macOS)
+bindkey '^[b' backward-word
+bindkey '^[f' forward-word
+
 # Enhanced tab completion
 autoload -Uz compinit && compinit
 
