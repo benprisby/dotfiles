@@ -36,5 +36,5 @@ Host octopi
     User pi
 
 Host vc-dashboard
-    HostName 10.20.10.21
+    HostName 10.20.0.21
     User lbp
