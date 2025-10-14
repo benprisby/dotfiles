@@ -1,7 +1,12 @@
 ---
 personal:
   email: ben@prisby.com
+  hostname: Bens-MacBook-Pro
 
-work:
+dm:
   email: benprisby@desktopmetal.com
   hostname: Ben-Prisby-CF4193Q04G
+
+puzzle:
+  email: ben@puzzleelectronics.com
+  hostname: Bens-Puzzle-MacBook-Pro
