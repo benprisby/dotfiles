@@ -12,6 +12,6 @@ README.md
 .ssh/config
 {{ end }}
 
-{{ if eq .chezmoi.hostname .work.hostname }}
+{{ if ne .chezmoi.hostname .personal.hostname }}
 .ssh/config
 {{ end }}

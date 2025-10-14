@@ -1,7 +1,9 @@
 [user]
     name = Ben Prisby
-{{- if eq .chezmoi.hostname .work.hostname }}
-    email = {{ .work.email }}
+{{- if eq .chezmoi.hostname .dm.hostname }}
+    email = {{ .dm.email }}
+{{- else if eq .chezmoi.hostname .puzzle.hostname }}
+    email = {{ .puzzle.email }}
 {{- else }}
     email = {{ .personal.email }}
 {{- end }}
