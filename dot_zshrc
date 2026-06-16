@@ -48,7 +48,7 @@ alias mkdir="mkdir -p"
 alias ax="arch -x86_64"
 
 # Combined Homebrew update
-alias bu="brew update --verbose && brew upgrade --verbose && brew upgrade --verbose --cask && brew cleanup"
+alias bu="brew update --verbose && brew upgrade --yes --verbose && brew upgrade --yes --verbose --cask && brew cleanup"
 
 # Utilities
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
