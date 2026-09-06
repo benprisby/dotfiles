@@ -11,7 +11,11 @@ Host nas
     HostName 10.20.0.10
     User lbp
 
-Host big-slice
+Host big-slice-01
+    HostName 10.20.0.21
+    User lbp
+
+Host home-assistant
     HostName 10.20.0.15
     User lbp
 
