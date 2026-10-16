@@ -8,7 +8,5 @@ export EDITOR=vim
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# Source .bashrc if it exists and we're interactive.
-if [ -f ~/.bashrc ] && [[ $- == *i* ]]; then
-    . ~/.bashrc
-fi
+# Login shells don't read .bashrc on their own (it returns early if non-interactive).
+[ -f ~/.bashrc ] && . ~/.bashrc

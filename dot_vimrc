@@ -3,8 +3,14 @@ set nocompatible
 set nobackup
 set autoread
 
-" Remember cursor position
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+" Remember cursor position (except in commit messages)
+augroup restore_cursor
+    autocmd!
+    autocmd BufReadPost *
+        \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+        \ |   exe "normal! g`\""
+        \ | endif
+augroup END
 
 " Syntax and file types
 syntax on
@@ -35,7 +41,7 @@ set showcmd
 set ruler
 set wildmenu
 set colorcolumn=120
-highlight colorcolumn ctermbg=234 guibg=#1c1c1c
+highlight ColorColumn ctermbg=234 guibg=#1c1c1c
 
 " Performance
 set lazyredraw

@@ -8,10 +8,9 @@ README.md
 {{ if eq .chezmoi.os "linux" }}
 .zshrc
 .zprofile
-.macos
 .ssh/config
 {{ end }}
 
-{{ if ne .chezmoi.hostname .personal.hostname }}
+{{ if ne .machine "personal" }}
 .ssh/config
 {{ end }}

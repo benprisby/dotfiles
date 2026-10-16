@@ -10,10 +10,18 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 
 # History configuration
+HISTSIZE=50000
+SAVEHIST=50000
 setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_dups
 setopt hist_ignore_space
+
+# Let ^S reach zle (forward search) instead of the terminal's flow control
+unsetopt flow_control
+
+# Note: EDITOR=vim makes zsh default to the vi insert keymap, so the emacs-style
+# bindings below are set explicitly.
 
 # History search keybindings
 bindkey "^R" history-incremental-search-backward
@@ -32,8 +40,12 @@ bindkey '^[f' forward-word
 # Enhanced tab completion
 autoload -Uz compinit && compinit
 
+# pyenv shell integration
+command -v pyenv >/dev/null && eval "$(pyenv init - zsh)"
+
 # File listing
-alias ll="ls -lahG"
+export CLICOLOR=1
+alias ll="ls -lah"
 alias la="ls -la"
 
 # System utilities
@@ -47,8 +59,8 @@ alias mkdir="mkdir -p"
 # Architecture emulation shortcut
 alias ax="arch -x86_64"
 
-# Combined Homebrew update
-alias bu="brew update --verbose && brew upgrade --yes --verbose && brew upgrade --yes --verbose --cask && brew cleanup"
+# Combined Homebrew update (`brew upgrade` covers both formulae and casks)
+alias bu="brew update --verbose && brew upgrade --yes --verbose && brew cleanup"
 
 # Utilities
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"

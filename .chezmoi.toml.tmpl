@@ -1,0 +1,10 @@
+{{- /* Machine type is asked once on `chezmoi init` and stored in the local config. */ -}}
+{{- $machine := promptChoiceOnce . "machine" "Machine type" (list "personal" "puzzle") "personal" -}}
+{{- $email := "ben@prisby.com" -}}
+{{- if eq $machine "puzzle" -}}
+{{-   $email = "ben@puzzleelectronics.com" -}}
+{{- end -}}
+
+[data]
+    machine = {{ $machine | quote }}
+    email = {{ $email | quote }}
