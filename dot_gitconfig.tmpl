@@ -1,6 +1,10 @@
 [user]
     name = Ben Prisby
-    email = {{ .email }}
+{{- if eq .chezmoi.hostname .puzzle.hostname }}
+    email = {{ .puzzle.email }}
+{{- else }}
+    email = {{ .personal.email }}
+{{- end }}
 
 [core]
     editor = vim

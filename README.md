@@ -30,11 +30,7 @@ chezmoi init --apply benprisby  # Also runs the macOS configuration script once
 sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply benprisby  # Installs binary to ~/.local/bin
 ```
 
-`chezmoi init` asks for the machine type (`personal` or `puzzle`) once and saves the answer in
-`~/.config/chezmoi/chezmoi.toml`. To change it later, run `chezmoi init --prompt` (or
-non-interactively, `chezmoi init --prompt --promptChoice "Machine type=<type>"`), then `chezmoi apply`.
-
 ## Notes
 
-- Different configurations applied automatically based on OS and machine type
+- Different configurations applied automatically based on OS and hostname (see `.chezmoidata.yaml`)
 - macOS script tested on Sequoia 15.6.1

@@ -11,6 +11,6 @@ README.md
 .ssh/config
 {{ end }}
 
-{{ if ne .machine "personal" }}
+{{ if ne .chezmoi.hostname .personal.hostname }}
 .ssh/config
 {{ end }}
