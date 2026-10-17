@@ -6,7 +6,8 @@ Dotfiles for my machines, managed by [chezmoi](https://www.chezmoi.io)
 
 | File(s)                    | Platform | Description |
 | -------------------------- | -------- | ----------- |
-| `.zshrc`, `.zprofile`      | macOS    | Enhanced zsh with better history, aliases, and Homebrew/pyenv/Cargo/Docker setup |
+| `.zshrc`, `.zprofile`      | macOS    | Enhanced zsh with better history, aliases, autosuggestions, syntax highlighting, and Homebrew/pyenv/Cargo/Docker setup |
+| `.config/starship.toml`    | macOS    | Two-line Starship prompt with directory, git status, and command duration |
 | `.bashrc`, `.bash_profile` | Linux    | Bash equivalents with completion and aliases |
 | `.vimrc`                   | All      | Minimal setup with cursor position memory and quality-of-life improvements |
 | `.gitconfig`               | All      | Git configuration with per-machine email |

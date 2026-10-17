@@ -64,3 +64,13 @@ alias bu="brew update --verbose && brew upgrade --yes --verbose && brew cleanup"
 
 # Utilities
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
+
+# Prompt and command-line plugins (Homebrew: starship, zsh-autosuggestions, zsh-syntax-highlighting)
+command -v starship >/dev/null && eval "$(starship init zsh)"
+if [[ -r ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    source "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+    bindkey '^F' autosuggest-accept
+fi
+# Must be sourced after all other widgets are defined
+[[ -r ${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] &&
+    source "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"

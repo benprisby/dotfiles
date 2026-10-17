@@ -9,6 +9,7 @@ README.md
 .zshrc
 .zprofile
 .ssh/config
+.config/starship.toml
 {{ end }}
 
 {{ if ne .chezmoi.hostname .personal.hostname }}
