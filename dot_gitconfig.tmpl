@@ -6,20 +6,37 @@
     email = {{ .personal.email }}
 {{- end }}
 
-[core]
-    editor = vim
-
 [init]
     defaultBranch = main
+
+[commit]
+    verbose = true
+
+[branch]
+    sort = -committerdate
+
+[tag]
+    sort = version:refname
+
+[fetch]
+    prune = true
 
 [pull]
     rebase = true
 
-[rebase]
-    autoStash = true
-
 [push]
     autoSetupRemote = true
 
-[fetch]
-    prune = true
+[rebase]
+    autoStash = true
+    updateRefs = true
+
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+
+[merge]
+    conflictStyle = zdiff3
+
+[rerere]
+    enabled = true
