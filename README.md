@@ -40,4 +40,5 @@ sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply benprisby  # Installs bi
 - Different configurations applied automatically based on OS and hostname (see `.chezmoidata.yaml`)
 - macOS script tested on Sequoia 15.6.1
 - Neovim plugins are pinned in `nvim-lazy-lock.json`, which `~/.config/nvim/lazy-lock.json` symlinks to, so `:Lazy update` changes it here to be committed
+- Homebrew packages these configs expect: `neovim`, `ripgrep`, `fd`, `tree-sitter-cli`, `tmux`, `herdr`, `starship`, `zsh-autosuggestions`, `zsh-syntax-highlighting`, and the `ghostty` and `font-fira-code-nerd-font` casks
 - Language servers for Neovim: `basedpyright`, `ruff`, `typescript-language-server`, `lua-language-server`, `terraform-ls`, `yaml-language-server`, `bash-language-server`, and `ansible-language-server` (with `ansible-lint`); `clangd` comes with Xcode
