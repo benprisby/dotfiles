@@ -11,6 +11,7 @@ Dotfiles for my machines, managed by [chezmoi](https://www.chezmoi.io)
 | `.bashrc`, `.bash_profile` | Linux    | Bash equivalents with completion and aliases |
 | `.vimrc`                   | All      | Minimal setup with cursor position memory and quality-of-life improvements |
 | `.config/nvim`             | All      | Neovim with lazy.nvim, VS Code Dark+, LSP and Tree-sitter, Snacks picker, Oil, Gitsigns, and Neogit |
+| `.config/ghostty`          | macOS    | Ghostty with VS Code Dark+, Fira Code Retina, and a translucent window |
 | `.gitconfig`               | All      | Git configuration with per-machine email |
 | `.ssh/config`              | macOS    | SSH shortcuts and options (personal machines only) |
 | `configure-macos.sh`       | macOS    | Automated system preferences for keyboard, Finder, and Dock |

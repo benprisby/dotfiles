@@ -1,0 +1,13 @@
+font-family = FiraCode Nerd Font
+font-style = Retina
+font-size = 13
+
+theme = Dark+
+background-opacity = 0.9
+background-blur = true
+
+window-padding-x = 10
+window-padding-y = 6
+window-padding-balance = true
+
+shell-integration-features = ssh-env,ssh-terminfo
