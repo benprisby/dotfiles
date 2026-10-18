@@ -1,6 +1,4 @@
 " Basic behavior
-set nocompatible
-set nobackup
 set autoread
 
 " Remember cursor position (except in commit messages)
@@ -47,6 +45,4 @@ highlight ColorColumn ctermbg=234 guibg=#1c1c1c
 set lazyredraw
 
 " Disable bells
-set noerrorbells
-set visualbell
-set t_vb=
+set belloff=all
