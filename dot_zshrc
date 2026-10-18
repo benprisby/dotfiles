@@ -1,8 +1,5 @@
-# Bash-like behavior
-setopt globdots
-setopt noautomenu
+# Leave unmatched globs as typed (e.g. HEAD^, URLs with ?)
 setopt nonomatch
-setopt rm_star_silent
 
 # Directory navigation
 setopt auto_cd
@@ -12,7 +9,6 @@ setopt pushd_ignore_dups
 # History configuration
 HISTSIZE=50000
 SAVEHIST=50000
-setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_dups
 setopt hist_ignore_space
@@ -20,28 +16,21 @@ setopt hist_ignore_space
 # Let ^S reach zle (forward search) instead of the terminal's flow control
 unsetopt flow_control
 
-# Note: EDITOR=vim makes zsh default to the vi insert keymap, so the emacs-style
-# bindings below are set explicitly.
-
-# History search keybindings
+# Key bindings: EDITOR=nvim makes zsh default to the vi insert keymap, so the
+# emacs-style keys are bound explicitly (^[b/^[f are Option + arrow on macOS).
 bindkey "^R" history-incremental-search-backward
 bindkey "^S" history-incremental-search-forward
-
-# Basic line editing
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 bindkey '^K' kill-line
 bindkey '^U' backward-kill-line
-
-# Word movement (Option + arrow on macOS)
 bindkey '^[b' backward-word
 bindkey '^[f' forward-word
 
-# Enhanced tab completion
+# Tab completion with an arrow-key menu and case-insensitive matching
 autoload -Uz compinit && compinit
-
-# pyenv shell integration
-command -v pyenv >/dev/null && eval "$(pyenv init - zsh)"
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # File listing
 export CLICOLOR=1
@@ -50,19 +39,14 @@ alias la="ls -la"
 
 # System utilities
 alias grep="grep --color=auto"
-alias ..="cd .."
 alias ...="cd ../.."
 alias df="df -h"
 alias du="du -h"
 alias mkdir="mkdir -p"
 
-# Architecture emulation shortcut
+# Shortcuts
 alias ax="arch -x86_64"
-
-# Combined Homebrew update (`brew upgrade` covers both formulae and casks)
-alias bu="brew update --verbose && brew upgrade --yes --verbose && brew cleanup"
-
-# Utilities
+alias bu="brew update --verbose && brew upgrade --yes --verbose && brew cleanup"  # upgrade covers casks too
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
 
 # Prompt and command-line plugins (Homebrew: starship, zsh-autosuggestions, zsh-syntax-highlighting)

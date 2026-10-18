@@ -5,7 +5,6 @@ export PATH="${HOME}/.local/bin:${PATH}"
 export EDITOR=vim
 
 # Locale setup
-export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Login shells don't read .bashrc on their own (it returns early if non-interactive).

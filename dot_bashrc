@@ -30,7 +30,6 @@ alias la="ls -la"
 
 # System utilities
 alias grep="grep --color=auto"
-alias ..="cd .."
 alias ...="cd ../.."
 alias df="df -h"
 alias du="du -h"
