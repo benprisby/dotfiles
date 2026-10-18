@@ -11,6 +11,7 @@ nvim-lazy-lock.json
 .zprofile
 .ssh/config
 .config/ghostty
+.config/herdr
 .config/starship.toml
 {{ end }}
 

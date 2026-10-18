@@ -12,6 +12,7 @@ Dotfiles for my machines, managed by [chezmoi](https://www.chezmoi.io)
 | `.vimrc`                   | All      | Minimal setup with cursor position memory and quality-of-life improvements |
 | `.config/nvim`             | All      | Neovim with lazy.nvim, VS Code Dark+, LSP and Tree-sitter, Snacks picker, Oil, Gitsigns, and Neogit |
 | `.config/tmux`             | All      | tmux with a Ctrl-Space prefix, true color, OSC 52 clipboard, and a Dark+ status bar |
+| `.config/herdr`            | macOS    | herdr agent multiplexer on its default keys, with onboarding dismissed |
 | `.config/ghostty`          | macOS    | Ghostty with VS Code Dark+, Fira Code Retina, and a translucent window |
 | `.gitconfig`               | All      | Git configuration with per-machine email |
 | `.ssh/config`              | macOS    | SSH shortcuts and options (personal machines only) |
